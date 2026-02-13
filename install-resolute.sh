@@ -8,8 +8,7 @@ set -Eeuxo pipefail
 : "${OSATE_URL:=https://osate-build.sei.cmu.edu/download/osate/stable/${OSATE_VERSION}/products/osate2-${OSATE_VERSION}-vfinal-linux.gtk.x86_64.tar.gz}"
 : "${RESOLUTE_UPDATE_SITE:=https://raw.githubusercontent.com/loonwerks/Resolute-Updates/master}"
 : "${RESOLUTE_FEATURE_ID:=com.rockwellcollins.atc.resolute.feature.feature.group}"
- 
-rm -rf ${OSATE_DIR}
+
 mkdir -p ${OSATE_DIR}
 pushd ${OSATE_DIR}
 curl ${OSATE_URL} | tar --warning=no-unknown-keyword -xz
