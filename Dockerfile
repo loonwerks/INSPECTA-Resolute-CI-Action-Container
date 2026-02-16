@@ -15,6 +15,8 @@ RUN apt-get update -q \
         pkg-config \
         bubblewrap \
         tar \
+        jq \
+        xvfb \
     && apt-get clean autoclean \
     && apt-get autoremove --yes \
     && rm -rf /var/lib/{apt,dpkg,cache,log}/
@@ -36,3 +38,4 @@ ENV PATH=${AM_REPOS_ROOT}/rust-am-clients/target/release:${PATH}
 # Install Resolute
 COPY install-resolute.sh /install-resolute.sh
 RUN chmod +x /install-resolute.sh && ./install-resolute.sh
+ENV PATH=/osate2-2.14.0:${PATH}
