@@ -1,4 +1,4 @@
-name: Build and Publish INSPECTA Verus CI Action Docker Image
+name: Build and Publish INSPECTA Resolute CI Action Docker Image
 
 on:
   push:
