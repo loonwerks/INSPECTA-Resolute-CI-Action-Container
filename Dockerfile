@@ -23,8 +23,6 @@ ENV AM_REPOS_ROOT=/usr/local/attestation_manager
 
 RUN mkdir -p ${AM_REPOS_ROOT}
 
-ENV PATH=${AM_REPOS_ROOT}/rust-am-clients/target/release:${PATH}
-
 # Install Rust
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 ENV PATH="/root/.cargo/bin:$PATH"
@@ -33,6 +31,7 @@ ENV PATH="/root/.cargo/bin:$PATH"
 COPY install-attestation-manager.sh /install-attestation-manager.sh
 RUN chmod +x /install-attestation-manager.sh && ./install-attestation-manager.sh
 ENV ASP_BIN=${AM_REPOS_ROOT}/asp-libs/target/release/
+ENV PATH=${AM_REPOS_ROOT}/rust-am-clients/target/release:${PATH}
 
 # Install Resolute
 COPY install-resolute.sh /install-resolute.sh
