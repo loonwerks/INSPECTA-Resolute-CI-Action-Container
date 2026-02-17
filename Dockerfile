@@ -12,6 +12,7 @@ RUN apt-get update -q \
         libssl-dev \
         libgmp-dev \
         libzmq3-dev \
+        libgtk-3-0 \
         pkg-config \
         bubblewrap \
         tar \
