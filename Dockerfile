@@ -33,6 +33,7 @@ ENV PATH="/root/.cargo/bin:$PATH"
 COPY install-attestation-manager.sh /install-attestation-manager.sh
 RUN chmod +x /install-attestation-manager.sh && ./install-attestation-manager.sh
 ENV ASP_BIN=${AM_REPOS_ROOT}/asp-libs/target/release/
+ENV RODEO_ROOT=${AM_REPOS_ROOT}/rust-am-clients
 ENV PATH=/_opam/bin/:${PATH}
 ENV PATH=${AM_REPOS_ROOT}/rust-am-clients/target/release:${PATH}
 
